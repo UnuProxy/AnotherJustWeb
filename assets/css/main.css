@@ -54,7 +54,7 @@ ul {
     margin-right: 5px;
 }
 
-/* Header styles */
+
 /* Header styles */
 .main-header {
     background-color: #fff;
@@ -141,7 +141,7 @@ ul {
 /* Hero section */
 .hero {
     height: 80vh;
-    background-image: url('/assets/img/hero/Magic-Studio-Magic-Expand-LP-1-1-1-e1715859481411.png');
+    background-image: url('assets/img/hero/Magic-Studio-Magic-Expand-LP-1-1-1-e1715859481411.png');
     background-size: cover;
     background-position: center;
     position: relative;
