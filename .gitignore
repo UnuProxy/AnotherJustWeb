@@ -1,9 +1,4 @@
-# Ignore all images except those in a specific folder
-assets/img/*
 
-# But keep essential images (modify as needed)
-!assets/img/logos/
-!assets/img/branding/
 
 # Ignore system and temporary files
 .DS_Store
