@@ -1430,6 +1430,25 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
       </script>
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+  const video = document.querySelector('.experience-video');
+  
+  // Try to play video when page loads
+  video.play().catch(function(error) {
+    console.log('Autoplay failed:', error);
+    
+    // Add a play button or other fallback
+  });
+  
+  // Try again on first user interaction
+  document.addEventListener('touchstart', function() {
+    video.play().catch(function(error) {
+      console.log('Play on touch failed:', error);
+    });
+  }, {once: true});
+});
+      </script>
  <!-- Hamburger Menu -->
 <script>document.addEventListener('DOMContentLoaded', function() {
   const hamburger = document.querySelector('.hamburger-icon');
