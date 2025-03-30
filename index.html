@@ -655,75 +655,75 @@
 
 
     <!-- Contact Form with Premium Styling -->
-<section class="contact-section" id="contact">
-  <div class="contact-container">
-    <div class="contact-left">
-      <div class="contact-left-content">
-        <div class="logo-small">
-          <span class="text-logo-small">Just Enjoy Ibiza</span>
-        </div>
-        <h2 class="contact-heading">
-          <span class="heading-accent">Get in touch</span> to find the perfect charter
-        </h2>
-        <p class="response-time">You'll hear from us in <strong>19 minutes</strong>.</p>
-        <p class="contact-or">Or <strong>REQUEST A CALLBACK</strong> to assure you get the best offer during the <strong>high season</strong>.</p>
-      </div>
-    </div>
-    
-    <div class="contact-right">
-      <form class="contact-form" action="https://usebasin.com/f/5bf7d9c6072f" method="POST" id="charter-form">
-        <div class="form-group">
-          <label for="name">Full Name</label>
-          <input type="text" id="name" name="name" placeholder="Your name" required>
-        </div>
-        
-        <div class="form-group">
-          <label for="email">Email Address</label>
-          <input type="email" id="email" name="email" placeholder="your@email.com" required>
-        </div>
-        
-        <div class="form-group">
-          <label for="date">Charter Date</label>
-          <input type="date" id="date" name="date" required>
-        </div>
-        
-        <div class="form-group">
-          <label for="budget">Your Budget</label>
-          <input type="text" id="budget" name="budget" placeholder="€" required>
-        </div>
-        
-        <div class="form-group">
-          <label for="passengers">Number of Guests</label>
-          <select id="passengers" name="passengers" required>
-            <option value="" selected disabled>Select passengers</option>
-            <option value="1-2">1-2 passengers</option>
-            <option value="3-4">3-4 passengers</option>
-            <option value="5-6">5-6 passengers</option>
-            <option value="7-8">7-8 passengers</option>
-            <option value="9-10">9-10 passengers</option>
-            <option value="11-12">11-12 passengers</option>
-            <option value="13+">13+ passengers</option>
-          </select>
-        </div>
-        
-        <div class="form-group">
-          <label for="phone">Phone Number</label>
-          <div class="phone-input-wrapper">
-            <div class="country-selector">
-              <input type="text" id="country-code" name="country_code" value="+34" readonly>
+    <section class="contact-section" id="contact">
+      <div class="contact-container">
+        <div class="contact-left">
+          <div class="contact-left-content">
+            <div class="logo-small">
+              <span class="text-logo-small">Just Enjoy Ibiza</span>
             </div>
-            <input type="tel" id="phone" name="phone" placeholder="Phone number" required>
-            <input type="hidden" id="full-phone" name="full_phone">
+            <h2 class="contact-heading">
+              <span class="heading-accent">Get in touch</span> to find the perfect charter
+            </h2>
+            <p class="response-time">You'll hear from us in <strong>19 minutes</strong>.</p>
+            <p class="contact-or">Or <strong>REQUEST A CALLBACK</strong> to assure you get the best offer during the <strong>high season</strong>.</p>
           </div>
         </div>
         
-        <div class="form-message" id="form-message"></div>
-        
-        <button type="submit" class="submit-button">DISCOVER YOUR PERFECT YACHT</button>
-      </form>
-    </div>
-  </div>
-</section>
+        <div class="contact-right">
+          <form class="contact-form" action="https://usebasin.com/f/5bf7d9c6072f" method="POST" id="charter-form">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="your@email.com" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="date">Charter Date</label>
+              <input type="date" id="date" name="date" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="budget">Your Budget</label>
+              <input type="text" id="budget" name="budget" placeholder="€" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="passengers">Number of Guests</label>
+              <select id="passengers" name="passengers" required>
+                <option value="" selected disabled>Select passengers</option>
+                <option value="1-2">1-2 passengers</option>
+                <option value="3-4">3-4 passengers</option>
+                <option value="5-6">5-6 passengers</option>
+                <option value="7-8">7-8 passengers</option>
+                <option value="9-10">9-10 passengers</option>
+                <option value="11-12">11-12 passengers</option>
+                <option value="13+">13+ passengers</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <div class="phone-input-wrapper">
+                <div class="country-selector">
+                  <input type="text" id="country-code" name="country_code" value="+34" readonly>
+                </div>
+                <input type="tel" id="phone" name="phone" placeholder="Phone number" required>
+                <input type="hidden" id="full-phone" name="full_phone">
+              </div>
+            </div>
+            
+            <div class="form-message" id="form-message"></div>
+            
+            <button type="submit" class="submit-button">DISCOVER YOUR PERFECT YACHT</button>
+          </form>
+        </div>
+      </div>
+    </section>
     <!-- Thank You Popup -->
     <div id="thank-you-popup" class="popup-overlay">
     <div class="popup-content">
@@ -1430,25 +1430,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
       </script>
-      <script>
-        document.addEventListener('DOMContentLoaded', function() {
-  const video = document.querySelector('.experience-video');
-  
-  // Try to play video when page loads
-  video.play().catch(function(error) {
-    console.log('Autoplay failed:', error);
-    
-    // Add a play button or other fallback
-  });
-  
-  // Try again on first user interaction
-  document.addEventListener('touchstart', function() {
-    video.play().catch(function(error) {
-      console.log('Play on touch failed:', error);
-    });
-  }, {once: true});
-});
-      </script>
+      
  <!-- Hamburger Menu -->
 <script>document.addEventListener('DOMContentLoaded', function() {
   const hamburger = document.querySelector('.hamburger-icon');
