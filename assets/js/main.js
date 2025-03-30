@@ -80,7 +80,13 @@ const boatInfoImages = {
     "Key Largo 27": "assets/img/boats/Screenshot 2025-03-27 at 22.31.34.png",
     "Rand 27": "assets/img/boats/Screenshot 2025-03-27 at 22.32.26.png",
     "Alfastreet Marine 28": "assets/img/boats/Screenshot 2025-03-27 at 22.29.29.png",
-    "Pershing 37": "assets/img/boats/Screenshot 2025-03-27 at 22.37.43.png"
+    "Pershing 37": "assets/img/boats/Screenshot 2025-03-27 at 22.37.43.png",
+    "De Antonio 36": "assets/img/boats/Screenshot 2025-03-30 at 22.33.57.png",
+    "Sea Ray 290" : "assets/img/boats/Screenshot 2025-03-30 at 22.44.07.png",
+    "Vanquish 58" : "assets/img/boats/Screenshot 2025-03-30 at 22.49.32.png",
+    "Pardo 50" : "assets/img/boats/Screenshot 2025-03-30 at 22.55.20.png",
+    "Sunseeker Predator 62" : "assets/img/boats/Screenshot 2025-03-30 at 23.11.08.png",
+    "Riva Argo 90" : "assets/img/boats/Screenshot 2025-03-30 at 23.17.27.png"
   };
   
   // Variable to store currently selected boat
