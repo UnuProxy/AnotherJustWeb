@@ -74,6 +74,10 @@ ul {
 .logo a {
   text-decoration: none;
 }
+.logo-image {
+  max-height: 60px; /* Adjust based on your header height */
+  width: auto;
+}
 
 .logo-text {
   font-size: 24px;
