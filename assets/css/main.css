@@ -75,7 +75,7 @@ ul {
   text-decoration: none;
 }
 .logo-image {
-  max-height: 60px; /* Adjust based on your header height */
+  max-height: 60px; 
   width: auto;
 }
 
@@ -323,7 +323,7 @@ ul {
 /* Hero section */
 .hero {
     height: 80vh;
-    background-image: url('/AnotherJustWeb/assets/img/hero/Magic-Studio-Magic-Expand-LP-1-1-1-e1715859481411.png');
+    background-image: url('/assets/img/hero/Magic-Studio-Magic-Expand-LP-1-1-1-e1715859481411.png');
     background-size: cover;
     background-position: center;
     position: relative;
@@ -1608,7 +1608,7 @@ ul {
   .contact-left {
     flex: 0 0 40%;
     padding: 30px;
-    background-image: url('/AnotherJustWeb/assets/img/Why/Magic-Studio-Magic-Expand-LP-1-1-1-e1715859481411.png'); /* Boat image background */
+    background-image: url('/assets/img/Why/Magic-Studio-Magic-Expand-LP-1-1-1-e1715859481411.png'); /* Boat image background */
     background-size: cover;
     background-position: center;
     position: relative;
