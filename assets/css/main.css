@@ -86,6 +86,7 @@ ul {
   letter-spacing: 0.5px;
 }
 
+/* Existing Navigation Styles */
 .main-nav ul {
   display: flex;
   list-style: none;
@@ -106,8 +107,9 @@ ul {
   color: #0a0a3c;
 }
 
+/* General Button Styling (applies to all instances) */
 .btn-book {
-  background-color: #0a0a3c;
+  background-color: #2095AE;
   color: white !important;
   padding: 10px 20px;
   border-radius: 4px;
@@ -115,14 +117,45 @@ ul {
   font-size: 14px;
   letter-spacing: 1px;
   transition: background-color 0.3s ease !important;
+  display: inline-block;
+  text-align: center;
+  font-weight: 500;
+  text-decoration: none;
 }
 
 .btn-book:hover {
   background-color: #1a1a6c;
 }
+
+/* Mobile Menu Button Fix */
+.mobile-menu .btn-book {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin: 10px 0;
+  box-sizing: border-box;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Extra styles to ensure the button is properly styled in all containers */
+a.btn-book {
+  color: white !important;
+  text-decoration: none !important;
+}
+
+/* Mobile menu container adjustments */
+.mobile-menu {
+  padding-bottom: 20px;
+}
+
+/* Make sure the button has enough vertical space between menu items */
+.mobile-menu a:not(:last-child) {
+  margin-bottom: 10px;
+}
 /* Reduce header height */
 .main-header {
-  padding: 8px 0; /* Reduced from 15px to 8px */
+  padding: 8px 0; 
 }
 
 .header-container {
@@ -386,7 +419,7 @@ ul {
 }
 
 .hero h2 {
-    font-size: 36px;
+    font-size: 16px;
     margin-bottom: 20px;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
@@ -586,7 +619,7 @@ ul {
 
 .cta-button {
   display: inline-block;
-  background-color: #0a0a4a;
+  background-color: #2095AE !important;
   color: white;
   padding: 12px 30px;
   border-radius: 5px;
@@ -1053,61 +1086,133 @@ ul {
     color: #555;
   }
   
-  .boat-price {
-    text-align: right;
-  }
-  
   .price-link {
-    font-size: 14px;
-    color: #0a0a4a;
+    display: inline-block;
+    background-color: #3498db;
+    color: white;
+    font-size: 12px;
+    font-weight: 400;
+    padding: 5px 10px;
+    border-radius: 3px;
     text-decoration: none;
-    white-space: nowrap;
+    transition: all 0.2s ease;
   }
   
   .price-link:hover {
-    text-decoration: underline;
+    background-color: #2980b9;
   }
   
-  /* Responsive adjustments */
-  @media (max-width: 992px) {
-    .boats-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .boats-header {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-    
-    .header-left, .header-right {
-      flex: 0 0 100%;
-      width: 100%;
-      margin-bottom: 20px;
-    }
-    
-    .header-right {
-      justify-content: center;
-    }
+  .price-link::after {
+    content: "→";
+    font-size: 12px;
+    margin-left: 3px;
   }
-  
-  @media (max-width: 576px) {
-    .boats-grid {
-      grid-template-columns: 1fr;
-    }
-    
-    .section-title {
-      font-size: 36px;
-    }
-    
-    .trip-number {
-      font-size: 56px;
-    }
-    
-    .trip-label {
-      font-size: 20px;
-    }
+  /* Mobile-first boat grid styling */
+.boats-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+/* Boat card styling */
+.boat-card {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.boat-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Boat image container */
+.boat-image {
+  position: relative;
+  height: 0;
+  padding-bottom: 66.67%; /* 3:2 aspect ratio */
+  overflow: hidden;
+}
+
+.boat-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.boat-name {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  color: white;
+  padding: 15px 10px 10px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* Boat details */
+.boat-details {
+  padding: 12px;
+}
+
+.boat-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Price link styling - minimal and subtle */
+.price-link {
+  display: inline-block;
+  background-color: rgba(0, 102, 204, 0.9);
+  color: white;
+  font-size: 12px;
+  font-weight: 400;
+  padding: 4px 8px;
+  border-radius: 3px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  width: 100%;
+  text-align: center;
+}
+
+.price-link:hover {
+  background-color: rgba(0, 82, 164, 0.9);
+}
+
+/* Responsive breakpoints */
+@media (min-width: 576px) {
+  .boats-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
+}
+
+@media (min-width: 992px) {
+  .boats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Custom JavaScript will be needed to reorder the boats by size
+   But here's the CSS part to support that order */
+.boat-card[data-size="8.05m"] { order: 1; }
+.boat-card[data-size="8.5m"] { order: 2; }
+.boat-card[data-size="8.50M"] { order: 3; }
+.boat-card[data-size="9m"] { order: 4; }
+.boat-card[data-size="10m"] { order: 5; }
+.boat-card[data-size="11m"] { order: 6; }
+.boat-card[data-size="11.20m"] { order: 7; }
+.boat-card[data-size="18m"] { order: 8; }
+.boat-card[data-size="28.70m"] { order: 9; }
 
   /* More boats section */
 .more-boats-section {
@@ -1140,7 +1245,7 @@ ul {
   
   .more-boats-button {
     display: inline-block;
-    background-color: #0a0a4a;
+    background-color: #2095AE;
     color: white;
     padding: 12px 30px;
     border-radius: 5px;
@@ -1569,7 +1674,7 @@ ul {
     display: inline-block;
     padding: 12px 25px;
     background-color: #fff;
-    color: #0a0a4a;
+    color: #2095AE;
     border: 2px solid #0a0a4a;
     border-radius: 5px;
     font-weight: 500;
@@ -1774,7 +1879,7 @@ ul {
   }
   
   .submit-button {
-    background-color: #0a0a4a;
+    background-color: #2095AE;
     color: white;
     font-weight: bold;
     padding: 14px 30px;
