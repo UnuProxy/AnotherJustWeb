@@ -322,3 +322,37 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     }
   });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    // Select all boat cards
+    const boatCards = document.querySelectorAll('.boat-card');
+    const boatsGrid = document.querySelector('.boats-grid');
+    
+    // Convert NodeList to Array for sorting
+    const boatCardsArray = Array.from(boatCards);
+    
+    // Function to extract size value from boat card
+    function getBoatSize(boatCard) {
+      const sizeText = boatCard.querySelector('.size').textContent.trim();
+      // Extract numeric part, handling different formats
+      const sizeMatch = sizeText.match(/(\d+\.?\d*)m/i);
+      return sizeMatch ? parseFloat(sizeMatch[1]) : 0;
+    }
+    
+    // Sort boat cards by size (small to large)
+    boatCardsArray.sort((a, b) => {
+      return getBoatSize(a) - getBoatSize(b);
+    });
+    
+    // Clear and append sorted boats
+    boatsGrid.innerHTML = '';
+    boatCardsArray.forEach(card => {
+      boatsGrid.appendChild(card);
+    });
+    
+    // Add data-size attribute for CSS ordering (optional)
+    boatCardsArray.forEach(card => {
+      const sizeText = card.querySelector('.size').textContent.trim();
+      card.setAttribute('data-size', sizeText.replace(/[^0-9\.m]/gi, ''));
+    });
+  });
