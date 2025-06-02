@@ -41,12 +41,13 @@
             opacity: 0.8;
         }
         
-        .pdf-container {
+        .content-container {
             margin-top: 60px;
             height: calc(100vh - 60px);
             width: 100%;
         }
         
+        /* Desktop PDF viewer */
         .pdf-frame {
             width: 100%;
             height: 100%;
@@ -54,39 +55,91 @@
             background: white;
         }
         
-        
-        .pdf-fallback {
+        /* Mobile-friendly content */
+        .mobile-content {
             display: none;
             text-align: center;
-            padding: 50px 20px;
+            padding: 40px 20px;
             background: white;
             margin: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            min-height: calc(100vh - 120px);
         }
         
-        .download-btn {
-            background: #007cba;
-            color: white;
+        .mobile-content h1 {
+            color: #007cba;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .mobile-content p {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        
+        .action-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .btn {
             text-decoration: none;
             padding: 15px 30px;
             border-radius: 25px;
             font-weight: bold;
             display: inline-block;
-            margin: 20px;
+            transition: all 0.3s ease;
+            min-width: 200px;
+            text-align: center;
         }
         
-        .download-btn:hover {
+        .btn-primary {
+            background: #007cba;
+            color: white;
+        }
+        
+        .btn-primary:hover {
             background: #005a8a;
+            transform: translateY(-2px);
         }
         
-       
+        .btn-secondary {
+            background: white;
+            color: #007cba;
+            border: 2px solid #007cba;
+        }
+        
+        .btn-secondary:hover {
+            background: #007cba;
+            color: white;
+        }
+        
+        .device-info {
+            background: #e8f4f8;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-size: 14px;
+            color: #555;
+        }
+        
+        .icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        /* Responsive design */
         @media (max-width: 768px) {
             .header {
                 padding: 12px 15px;
             }
             
-            .pdf-container {
+            .content-container {
                 margin-top: 55px;
                 height: calc(100vh - 55px);
             }
@@ -94,19 +147,52 @@
             .back-link {
                 font-size: 14px;
             }
+            
+            .mobile-content {
+                margin: 10px;
+                padding: 30px 20px;
+            }
+            
+            .mobile-content h1 {
+                font-size: 20px;
+            }
+            
+            .action-buttons {
+                gap: 12px;
+            }
+            
+            .btn {
+                padding: 12px 25px;
+                min-width: 180px;
+            }
+        }
+        
+        /* Very small screens */
+        @media (max-width: 480px) {
+            .mobile-content {
+                margin: 5px;
+                padding: 20px 15px;
+            }
+            
+            .btn {
+                padding: 12px 20px;
+                min-width: 160px;
+                font-size: 14px;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Simple header with back link -->
+    <!-- Header with back link -->
     <div class="header">
         <a href="index.html" class="back-link">
             ← Back to Just Enjoy Ibiza
         </a>
     </div>
     
-    <!-- PDF Container -->
-    <div class="pdf-container">
+    <!-- Content Container -->
+    <div class="content-container">
+        <!-- Desktop PDF viewer -->
         <iframe 
             id="pdfFrame"
             src="assets/img/tours/BOAT_TOURS_SAN_ANTONIO.pdf" 
@@ -114,28 +200,80 @@
             type="application/pdf">
         </iframe>
         
-        <!-- Fallback for browsers that don't support PDF embedding -->
-        <div class="pdf-fallback" id="pdfFallback">
-            <h2>📄 San Antonio Boat Tours</h2>
-            <p>Your browser doesn't support PDF viewing. Please download the file to view it:</p>
-            <a href="assets/img/tours/BOAT_TOURS_SAN_ANTONIO.pdf" download class="download-btn">
-                📥 Download PDF
-            </a>
+        <!-- Mobile-friendly content -->
+        <div class="mobile-content" id="mobileContent">
+            <div class="icon">🚤</div>
+            <h1>San Antonio Boat Tours</h1>
+            <p>Experience the beautiful coastline of San Antonio with our exclusive boat tours. Perfect for exploring hidden coves and enjoying the Mediterranean sun!</p>
+            
+            <div class="device-info">
+                <strong>📱 Mobile Device Detected</strong><br>
+                For the best viewing experience on mobile devices, we recommend downloading the PDF or viewing in a new tab.
+            </div>
+            
+            <div class="action-buttons">
+                <a href="assets/img/tours/BOAT_TOURS_SAN_ANTONIO.pdf" target="_blank" class="btn btn-primary">
+                    📄 View PDF in New Tab
+                </a>
+                <a href="assets/img/tours/BOAT_TOURS_SAN_ANTONIO.pdf" download class="btn btn-secondary">
+                    📥 Download PDF
+                </a>
+            </div>
         </div>
     </div>
 
-    <!-- JavaScript -->
+    <!-- JavaScript for device detection and handling -->
     <script>
-        // Check if PDF loaded successfully
-        window.addEventListener('load', function() {
-            const iframe = document.getElementById('pdfFrame');
-            const fallback = document.getElementById('pdfFallback');
+        // Enhanced mobile detection
+        function isMobileDevice() {
+            const userAgent = navigator.userAgent.toLowerCase();
+            const mobileKeywords = ['iphone', 'ipad', 'android', 'blackberry', 'nokia', 'opera mini', 'windows mobile', 'windows phone', 'iemobile'];
             
-            // Show fallback if PDF doesn't load (for mobile browsers)
-            iframe.addEventListener('error', function() {
+            // Check user agent
+            const isMobileUA = mobileKeywords.some(keyword => userAgent.includes(keyword));
+            
+            // Check screen size
+            const isSmallScreen = window.innerWidth <= 768;
+            
+            // Check touch capability
+            const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+            
+            return isMobileUA || (isSmallScreen && isTouchDevice);
+        }
+        
+        // Handle PDF display based on device
+        function handlePDFDisplay() {
+            const iframe = document.getElementById('pdfFrame');
+            const mobileContent = document.getElementById('mobileContent');
+            
+            if (isMobileDevice()) {
+                // Show mobile-friendly content for mobile devices
                 iframe.style.display = 'none';
-                fallback.style.display = 'block';
-            });
+                mobileContent.style.display = 'block';
+            } else {
+                // Show PDF iframe for desktop
+                iframe.style.display = 'block';
+                mobileContent.style.display = 'none';
+                
+                // Add error handling for desktop PDF loading
+                iframe.addEventListener('error', function() {
+                    iframe.style.display = 'none';
+                    mobileContent.style.display = 'block';
+                });
+            }
+        }
+        
+        // Initialize on page load
+        window.addEventListener('load', handlePDFDisplay);
+        
+        // Handle orientation changes on mobile
+        window.addEventListener('orientationchange', function() {
+            setTimeout(handlePDFDisplay, 100);
+        });
+        
+        // Handle window resize
+        window.addEventListener('resize', function() {
+            setTimeout(handlePDFDisplay, 100);
         });
     </script>
 </body>
