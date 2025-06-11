@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>San Antonio Boat Tours - Just Enjoy Ibiza</title>
-    <meta name="description" content="Premium San Antonio boat tours with Just Enjoy Ibiza. 3.5-hour tours daily at 10:00, 14:00, and 18:00. Fuel and drinks included. Book your adventure today!">
+    <title>San Antonio Boat Tours - Premium Ibiza Experience | Just Enjoy Ibiza</title>
+    <meta name="description" content="Book San Antonio's #1 boat tours! 3.5-hour premium experiences from €350. Daily departures 10AM, 2PM, 6PM. Es Vedra, secret coves, snorkeling included!">
     <style>
         * {
             margin: 0;
@@ -13,223 +13,344 @@
         }
         
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: #fff;
+            overflow-x: hidden;
+        }
+        
+        /* Urgent Banner */
+        .urgent-banner {
+            background: linear-gradient(45deg, #ff4757, #ff6b35);
+            color: white;
+            text-align: center;
+            padding: 12px 20px;
+            font-weight: 600;
+            font-size: 14px;
+            animation: pulse 2s infinite;
+            position: sticky;
+            top: 0;
+            z-index: 1001;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
         }
         
         /* Header */
         .header {
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(15px);
-            padding: 15px 20px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 20px;
+            position: sticky;
+            top: 52px;
             z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 30px rgba(0,0,0,0.1);
         }
         
-        .back-link {
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
             color: #007cba;
             text-decoration: none;
-            font-size: 16px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: 500;
-            transition: opacity 0.3s ease;
         }
         
-        .back-link:hover {
-            opacity: 0.7;
+        .header-cta {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .phone-number {
+            color: #ff4757;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        
+        .instant-book {
+            background: linear-gradient(135deg, #ff6b35, #ff4757);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 71, 87, 0.3);
+        }
+        
+        .instant-book:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 71, 87, 0.4);
         }
         
         /* Hero Section */
         .hero {
-            height: 100vh;
-            background: linear-gradient(
-                rgba(0, 0, 0, 0.35),
-                rgba(0, 0, 0, 0.25)
-            ),
-            url('assets/img/boats/DeAntonioYachts_D50_21-scaled.jpg') center/cover;
+            background: linear-gradient(135deg, rgba(0, 124, 186, 0.9), rgba(255, 107, 53, 0.8)),
+                        url('assets/img/boats/DeAntonioYachts_D50_21-scaled.jpg') center/cover;
+            min-height: 100vh;
             display: flex;
             align-items: center;
-            justify-content: center;
-            text-align: center;
+            padding: 100px 20px 50px;
             position: relative;
         }
         
         .hero-content {
-            max-width: 900px;
-            padding: 0 20px;
-            z-index: 2;
-            position: relative;
-            color: white;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
         }
         
-        .hero-badge {
-            background: rgba(255, 107, 53, 0.9);
+        .hero-left h1 {
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 800;
             color: white;
-            padding: 8px 20px;
-            border-radius: 25px;
-            font-size: 14px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 25px;
-            display: inline-block;
-        }
-        
-        .hero-title {
-            font-size: clamp(3.5rem, 8vw, 7rem);
-            font-weight: 700;
-            margin-bottom: 25px;
-            letter-spacing: -2px;
+            margin-bottom: 20px;
             line-height: 1.1;
         }
         
-        .hero-subtitle {
-            font-size: clamp(1.3rem, 3vw, 2rem);
-            margin-bottom: 40px;
-            opacity: 0.95;
+        .hero-left .subtitle {
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 30px;
             font-weight: 300;
         }
         
-        /* Tour Options in Hero */
-        .tour-options {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            margin-bottom: 45px;
-            flex-wrap: wrap;
-        }
-        
-        .tour-option {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(15px);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 20px;
-            padding: 25px 20px;
-            text-align: center;
-            color: white;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            min-width: 160px;
-        }
-        
-        .tour-option:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.25);
-            border-color: rgba(255, 255, 255, 0.5);
-        }
-        
-        .tour-option.featured {
-            background: rgba(255, 107, 53, 0.2);
-            border-color: rgba(255, 107, 53, 0.6);
-            transform: scale(1.05);
-        }
-        
-        .tour-option.featured:hover {
-            transform: scale(1.08) translateY(-5px);
-        }
-        
-        .tour-icon {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-        
-        .tour-name {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .tour-price {
-            font-size: 22px;
-            font-weight: 700;
-            margin-bottom: 5px;
-            color: #FFD700;
-        }
-        
-        .tour-duration {
-            font-size: 14px;
-            opacity: 0.9;
-        }
-        
-        .hero-cta {
-            display: flex;
-            gap: 25px;
-            justify-content: center;
-            flex-wrap: wrap;
+        .benefits-list {
+            list-style: none;
             margin-bottom: 40px;
         }
         
-        .btn {
-            padding: 18px 35px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 16px;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            position: relative;
-            overflow: hidden;
+        .benefits-list li {
+            color: white;
+            font-size: 18px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .check-icon {
+            background: #4CAF50;
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
         }
         
         .btn-primary {
-            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            background: linear-gradient(135deg, #ff6b35, #ff4757);
             color: white;
-            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 30px rgba(255, 107, 53, 0.4);
         }
         
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(255, 107, 53, 0.6);
+            box-shadow: 0 12px 40px rgba(255, 107, 53, 0.6);
         }
         
         .btn-secondary {
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.2);
             color: white;
-            border: 2px solid rgba(255, 255, 255, 0.4);
+            padding: 18px 40px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
             backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
         }
         
         .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.25);
+            background: rgba(255, 255, 255, 0.3);
             transform: translateY(-3px);
         }
         
-        .trust-indicators {
+        .trust-proof {
             display: flex;
-            justify-content: center;
-            gap: 40px;
+            gap: 30px;
+            align-items: center;
             flex-wrap: wrap;
-            margin-top: 30px;
         }
         
         .trust-item {
             display: flex;
             align-items: center;
             gap: 8px;
+            color: rgba(255, 255, 255, 0.9);
             font-size: 14px;
-            opacity: 0.9;
         }
         
-        .trust-icon {
+        .trust-item .icon {
             font-size: 16px;
-            color: #4CAF50;
+            color: #FFD700;
         }
         
-        /* Itinerary Section */
-        .itinerary-section {
+        /* Booking Widget */
+        .booking-widget {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .widget-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .widget-badge {
+            background: linear-gradient(135deg, #ff6b35, #ff4757);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+        
+        .widget-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .widget-subtitle {
+            color: #666;
+            font-size: 16px;
+        }
+        
+        .time-slots {
+            display: grid;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .time-slot {
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .time-slot:hover, .time-slot.selected {
+            border-color: #ff6b35;
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.05), rgba(255, 71, 87, 0.05));
+        }
+        
+        .time-slot.popular::before {
+            content: "Most Popular";
+            position: absolute;
+            top: -8px;
+            right: 15px;
+            background: linear-gradient(135deg, #ff6b35, #ff4757);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 10px;
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .slot-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        
+        .slot-time {
+            font-size: 20px;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+        
+        .slot-price {
+            font-size: 24px;
+            font-weight: 700;
+            color: #ff6b35;
+        }
+        
+        .slot-details {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .book-now-btn {
+            background: linear-gradient(135deg, #007cba, #00a8e6);
+            color: white;
+            width: 100%;
+            padding: 18px;
+            border: none;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0, 124, 186, 0.3);
+        }
+        
+        .book-now-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(0, 124, 186, 0.4);
+        }
+        
+        .guarantee {
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .guarantee .icon {
+            color: #4CAF50;
+            margin-right: 5px;
+        }
+        
+        /* Social Proof Section */
+        .social-proof {
+            background: #f8f9fa;
             padding: 80px 20px;
-            background: linear-gradient(135deg, #f8f9fa, #ffffff);
         }
         
         .container {
@@ -242,700 +363,569 @@
             margin-bottom: 60px;
         }
         
-        .section-badge {
-            background: linear-gradient(135deg, rgba(0, 124, 186, 0.1), rgba(0, 168, 230, 0.1));
-            color: #007cba;
-            padding: 8px 20px;
-            border-radius: 25px;
-            font-size: 14px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 20px;
-            display: inline-block;
-            border: 1px solid rgba(0, 124, 186, 0.2);
-        }
-        
         .section-title {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            margin-bottom: 20px;
-            color: #2c3e50;
-            font-weight: 300;
-            line-height: 1.2;
-        }
-        
-        .section-description {
-            color: #666;
-            font-size: 18px;
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.7;
-        }
-        
-        .itinerary-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-        
-        .itinerary-item {
-            text-align: center;
-            padding: 30px 20px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
-            transition: transform 0.3s ease;
-        }
-        
-        .itinerary-item:hover {
-            transform: translateY(-8px);
-        }
-        
-        .itinerary-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-        
-        .itinerary-item h3 {
-            font-size: 20px;
-            font-weight: 600;
+            font-size: 42px;
+            font-weight: 700;
             color: #2c3e50;
             margin-bottom: 15px;
         }
+        .section-title2{
+            color: #fff;
+        }
         
-        .itinerary-item p {
+        .section-subtitle {
+            font-size: 20px;
             color: #666;
-            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
         }
         
-        /* Boats Section */
-        .boats-section {
-            padding: 80px 20px;
-        }
-        
-        .boats-grid {
+        .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 40px;
             margin-bottom: 60px;
         }
         
-        .boat-card {
+        .stat-card {
+            text-align: center;
             background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(0,0,0,0.06);
-        }
-        
-        .boat-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-        }
-        
-        .boat-image-container {
-            position: relative;
-            height: 250px;
-            overflow: hidden;
-        }
-        
-        .boat-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            padding: 40px 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
         }
         
-        .boat-card:hover .boat-image {
-            transform: scale(1.05);
+        .stat-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .stat-number {
+            font-size: 48px;
+            font-weight: 800;
+            color: #ff6b35;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 18px;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .testimonial::before {
+            content: '"';
+            font-size: 60px;
+            color: #ff6b35;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-family: serif;
+        }
+        
+        .testimonial-text {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ff6b35, #ff4757);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 18px;
+        }
+        
+        .author-info h4 {
+            color: #2c3e50;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+        
+        .author-info .rating {
+            color: #FFD700;
+            font-size: 14px;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .feature-card {
+            text-align: center;
+            padding: 40px 20px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .feature-card p {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        /* Boats Section */
+        .boats {
+            padding: 80px 20px;
+            background: white;
+        }
+        
+        .boats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+        }
+        
+        .boat-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+        
+        .boat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.15);
+        }
+        
+        .boat-image {
+            height: 280px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
         }
         
         .boat-badge {
             position: absolute;
-            top: 15px;
-            left: 15px;
-            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            top: 20px;
+            left: 20px;
+            background: linear-gradient(135deg, #ff6b35, #ff4757);
             color: white;
-            padding: 6px 14px;
+            padding: 8px 16px;
             border-radius: 20px;
-            font-size: 11px;
+            font-size: 12px;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
-        }
-        
-        .boat-rating {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 6px 10px;
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            font-size: 13px;
-            font-weight: 600;
-            color: #2c3e50;
-        }
-        
-        .star {
-            color: #FFD700;
-            font-size: 12px;
         }
         
         .boat-content {
-            padding: 25px;
+            padding: 30px;
         }
         
-        .boat-name {
-            font-size: 20px;
+        .boat-title {
+            font-size: 24px;
             font-weight: 700;
-            margin-bottom: 6px;
             color: #2c3e50;
-        }
-        
-        .boat-location {
-            color: #666;
-            margin-bottom: 15px;
-            font-size: 14px;
-        }
-        
-        .boat-highlights {
-            background: #f8f9fa;
-            padding: 12px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-        
-        .highlight-title {
-            font-size: 11px;
-            font-weight: 600;
-            color: #2c3e50;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .highlight-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-        }
-        
-        .highlight-item {
-            background: white;
-            color: #007cba;
-            padding: 4px 8px;
-            border-radius: 12px;
-            font-size: 10px;
-            font-weight: 500;
-            border: 1px solid rgba(0, 124, 186, 0.2);
+            margin-bottom: 10px;
         }
         
         .boat-specs {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin-bottom: 20px;
+            gap: 15px;
+            margin: 20px 0;
         }
         
         .spec {
             display: flex;
             align-items: center;
-            gap: 6px;
-            font-size: 12px;
+            gap: 8px;
+            font-size: 14px;
             color: #666;
         }
         
         .spec-icon {
             color: #007cba;
-            font-size: 14px;
+            font-size: 16px;
         }
         
-        .spec strong {
-            color: #2c3e50;
-        }
-        
-        .boat-price-section {
-            border-top: 1px solid #eee;
-            padding-top: 20px;
-        }
-        
-        .price-header {
+        .boat-price {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 15px;
+            margin: 25px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 12px;
         }
         
-        .price-info {
-            flex: 1;
-        }
-        
-        .price-label {
-            font-size: 10px;
-            color: #666;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 3px;
-        }
-        
-        .price {
-            font-size: 24px;
+        .price-info h3 {
+            font-size: 32px;
             font-weight: 700;
             color: #007cba;
-            margin-bottom: 3px;
+            margin-bottom: 5px;
         }
         
-        .price-details {
-            font-size: 10px;
+        .price-info p {
             color: #666;
+            font-size: 14px;
         }
         
-        .urgency-badge {
-            background: #ff6b35;
+        .urgency {
+            background: #ff4757;
             color: white;
-            padding: 4px 8px;
-            border-radius: 10px;
-            font-size: 9px;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
             font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
         
         .boat-buttons {
             display: grid;
             grid-template-columns: 1fr 2fr;
-            gap: 10px;
+            gap: 15px;
         }
         
-        .btn-small {
-            padding: 10px 16px;
-            border-radius: 20px;
-            text-decoration: none;
-            font-size: 11px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.3px;
-            transition: all 0.3s ease;
-            text-align: center;
-        }
-        
-        .btn-details {
-            background: #f8f9fa;
+        .btn-outline {
+            background: transparent;
             color: #007cba;
-            border: 1px solid #e9ecef;
+            border: 2px solid #007cba;
+            padding: 12px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s ease;
         }
         
-        .btn-details:hover {
-            background: #e9ecef;
-            transform: translateY(-2px);
+        .btn-outline:hover {
+            background: #007cba;
+            color: white;
         }
         
         .btn-book {
             background: linear-gradient(135deg, #007cba, #00a8e6);
             color: white;
-            box-shadow: 0 4px 15px rgba(0, 124, 186, 0.3);
+            padding: 12px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s ease;
         }
         
         .btn-book:hover {
-            background: linear-gradient(135deg, #005a8a, #007cba);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 124, 186, 0.4);
+            box-shadow: 0 8px 25px rgba(0, 124, 186, 0.3);
         }
         
-        /* Contact Section */
-        .contact-section {
-            background: linear-gradient(135deg, #2c3e50, #34495e);
+        /* Final CTA */
+        .final-cta {
+            background: linear-gradient(135deg, #ff6b35, #ff4757);
             color: white;
             padding: 80px 20px;
             text-align: center;
         }
         
-        .contact-title {
-            font-size: clamp(2rem, 5vw, 3.5rem);
+        .cta-title {
+            font-size: 48px;
+            font-weight: 700;
             margin-bottom: 20px;
-            font-weight: 300;
         }
         
-        .contact-text {
-            font-size: 18px;
+        .cta-subtitle {
+            font-size: 24px;
             margin-bottom: 40px;
             opacity: 0.9;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
         }
         
-        .contact-buttons {
+        .cta-buttons {
             display: flex;
             gap: 20px;
             justify-content: center;
-            flex-wrap: wrap;
+            margin-bottom: 30px;
         }
         
         .btn-white {
             background: white;
-            color: #2c3e50;
+            color: #ff4757;
+            padding: 20px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            transition: all 0.3s ease;
         }
         
         .btn-white:hover {
-            background: #f8f9fa;
             transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
         }
         
-        .btn-outline {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
+        .guarantee-text {
+            font-size: 16px;
+            opacity: 0.9;
         }
         
-        .btn-outline:hover {
-            background: white;
-            color: #2c3e50;
-            transform: translateY(-3px);
-        }
-        
-        /* WhatsApp Button */
+        /* WhatsApp Float */
         .whatsapp-float {
             position: fixed;
-            bottom: 25px;
-            right: 25px;
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #25d366, #128c7e);
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-decoration: none;
             color: white;
-            font-size: 24px;
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            font-size: 30px;
+            text-decoration: none;
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
             z-index: 1000;
-            transition: all 0.3s ease;
+            animation: bounce 2s infinite;
         }
         
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+        @keyframes bounce {
+            0%, 20%, 53%, 80%, 100% { transform: translate3d(0,0,0); }
+            40%, 43% { transform: translate3d(0,-15px,0); }
+            70% { transform: translate3d(0,-7px,0); }
+            90% { transform: translate3d(0,-2px,0); }
         }
         
-        /* Responsive Design */
+        /* Responsive */
         @media (max-width: 768px) {
-            .hero-cta {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+            
+            .hero-buttons {
                 flex-direction: column;
                 align-items: center;
             }
             
-            .btn {
+            .btn-primary, .btn-secondary {
                 width: 100%;
-                max-width: 320px;
+                max-width: 300px;
             }
             
-            .tour-options {
-                gap: 15px;
+            .trust-proof {
+                justify-content: center;
             }
             
-            .tour-option {
-                min-width: 140px;
-                padding: 20px 15px;
-            }
-            
-            .tour-option.featured {
-                transform: scale(1.02);
-            }
-            
-            .trust-indicators {
-                gap: 20px;
+            .booking-widget {
+                padding: 30px 20px;
             }
             
             .boats-grid {
                 grid-template-columns: 1fr;
-                gap: 30px;
             }
             
-            .boat-content {
-                padding: 20px;
-            }
-            
-            .boat-specs {
-                grid-template-columns: 1fr;
-                gap: 8px;
-            }
-            
-            .boat-buttons {
-                grid-template-columns: 1fr;
-                gap: 8px;
-            }
-            
-            .price-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 8px;
-            }
-            
-            .itinerary-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
-            }
-            
-            .contact-buttons {
+            .cta-buttons {
                 flex-direction: column;
                 align-items: center;
             }
-        }
-        
-        @media (max-width: 480px) {
-            .boat-content {
-                padding: 15px;
-            }
             
-            .hero-content {
-                padding: 0 15px;
-            }
-            
-            .itinerary-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .itinerary-item {
-                padding: 20px 15px;
+            .header-cta {
+                flex-direction: column;
+                gap: 10px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <div class="header">
-        <a href="index.html" class="back-link">
-            ← Back to Just Enjoy Ibiza
-        </a>
+    <!-- Urgent Banner -->
+    <div class="urgent-banner">
+        🔥 LIMITED TIME: 20% OFF All Tours This Week Only! Book Now Before Spots Fill Up!
     </div>
+    
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="logo">← Just Enjoy Ibiza</a>
+            <div class="header-cta">
+                <a href="tel:+34692688348" class="phone-number">📞 +34 692 688 348</a>
+                <a href="#booking" class="instant-book">Book Instantly</a>
+            </div>
+        </div>
+    </header>
     
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <div class="hero-badge">📍 San Antonio Boat Tours</div>
-            <h1 class="hero-title">3 Daily Tours<br>Starting €350</h1>
-            <p class="hero-subtitle">Morning • Afternoon • Sunset | All 3.5 Hours</p>
-            
-            <div class="tour-options">
-                <div class="tour-option">
-                    <div class="tour-icon">🌅</div>
-                    <div class="tour-name">Morning</div>
-                    <div class="tour-price">From €350</div>
-                    <div class="tour-duration">10:00-13:30</div>
+            <div class="hero-left">
+                <h1>San Antonio's #1 Boat Tours</h1>
+                <p class="subtitle">Premium 3.5-hour experiences to secret coves</p>
+                
+                <ul class="benefits-list">
+                    <li><span class="check-icon">✓</span> ALL-INCLUSIVE: Fuel, drinks, snorkeling gear & captain</li>
+                    <li><span class="check-icon">✓</span> GUARANTEED: 3 secret swimming spots</li>
+                    <li><span class="check-icon">✓</span> FLEXIBLE: Free cancellation up to 24h before</li>
+                    <li><span class="check-icon">✓</span> RATED: 4.9/5 stars from 500+ happy customers</li>
+                </ul>
+                
+                <div class="hero-buttons">
+                    <a href="#booking" class="btn-primary">Book Now From €85/pers</a>
+                    <a href="https://wa.me/34692688348" class="btn-secondary">WhatsApp Quote</a>
                 </div>
-                <div class="tour-option featured">
-                    <div class="tour-icon">☀️</div>
-                    <div class="tour-name">Afternoon</div>
-                    <div class="tour-price">From €400</div>
-                    <div class="tour-duration">14:00-17:30</div>
-                </div>
-                <div class="tour-option">
-                    <div class="tour-icon">🌆</div>
-                    <div class="tour-name">Sunset</div>
-                    <div class="tour-price">From €450</div>
-                    <div class="tour-duration">18:00-21:30</div>
-                </div>
-            </div>
-            
-            <div class="hero-cta">
-                <a href="#boats" class="btn btn-primary">Book Now - Free Cancellation</a>
-                <a href="https://wa.me/34692688348" class="btn btn-secondary">WhatsApp for Instant Quote</a>
-            </div>
-            
-            <div class="trust-indicators">
-                <div class="trust-item">
-                    <span class="trust-icon">✓</span>
-                    <span>Fuel & Drinks Included</span>
-                </div>
-                <div class="trust-item">
-                    <span class="trust-icon">✓</span>
-                    <span>Professional Captain</span>
-                </div>
-                <div class="trust-item">
-                    <span class="trust-icon">✓</span>
-                    <span>Es Vedra & Secret Coves</span>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Itinerary Section -->
-    <section class="itinerary-section">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-badge">Tour Itinerary</div>
-                <h2 class="section-title">What You'll Experience</h2>
-                <p class="section-description">
-                    Each 3.5-hour tour takes you to San Antonio's most stunning locations, with professional guidance and everything included
-                </p>
-            </div>
-            
-            <div class="itinerary-grid">
-                <div class="itinerary-item">
-                    <div class="itinerary-icon">🏖️</div>
-                    <h3>Cala Comte Beach</h3>
-                    <p>Swim in crystal-clear turquoise waters at one of Ibiza's most famous beaches. Perfect for snorkeling and photos.</p>
-                </div>
-                <div class="itinerary-item">
-                    <div class="itinerary-icon">🗿</div>
-                    <h3>Es Vedra Rock</h3>
-                    <p>Visit the mystical Es Vedra, Ibiza's most iconic landmark. Legend says it's the third most magnetic place on Earth.</p>
-                </div>
-                <div class="itinerary-item">
-                    <div class="itinerary-icon">🏊‍♀️</div>
-                    <h3>Secret Swimming Coves</h3>
-                    <p>Discover hidden beaches only accessible by boat. Enjoy private swimming spots away from the crowds.</p>
-                </div>
-                <div class="itinerary-item">
-                    <div class="itinerary-icon">🤿</div>
-                    <h3>Snorkeling Adventure</h3>
-                    <p>Explore underwater marine life with provided snorkeling equipment. See colorful fish and sea life up close.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Boats Section -->
-    <section class="boats-section" id="boats">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-badge">Premium Fleet</div>
-                <h2 class="section-title">Choose Your Perfect Boat</h2>
-                <p class="section-description">
-                    Each boat in our carefully curated fleet offers unique features for your 3.5-hour San Antonio adventure
-                </p>
-            </div>
-            
-            <div class="boats-grid">
-                <!-- Boat 1: Key Largo 27 -->
-                <div class="boat-card">
-                    <div class="boat-image-container">
-                        <img src="assets/img/boats/Photo_6554113_DJI_513_jpg_9666772_0_2022522154512_photo_original.jpg.jpg" alt="Key Largo 27" class="boat-image">
-                        <div class="boat-badge">Most Popular</div>
-                        <div class="boat-rating">
-                            <span class="star">★</span>
-                            <span>4.9</span>
-                        </div>
+                
+                <div class="trust-proof">
+                    <div class="trust-item">
+                        <span class="icon">⭐</span>
+                        <span>4.9/5 Rating</span>
                     </div>
-                    <div class="boat-content">
-                        <h3 class="boat-name">Key Largo 27</h3>
-                        <p class="boat-location">Port - San Antonio | Perfect for Groups & Families</p>
-                        
-                        <div class="boat-highlights">
-                            <div class="highlight-title">All Included</div>
-                            <div class="highlight-list">
-                                <span class="highlight-item">Fuel</span>
-                                <span class="highlight-item">Courtesy Drinks</span>
-                                <span class="highlight-item">Fuel</span>
-                                <span class="highlight-item">Courtesy Drinks</span>
-                                <span class="highlight-item">Snorkeling Gear</span>
-                                <span class="highlight-item">Towels</span>
-                                <span class="highlight-item">Professional Captain</span>
-                            </div>
+                    <div class="trust-item">
+                        <span class="icon">👥</span>
+                        <span>500+ Tours</span>
+                    </div>
+                    <div class="trust-item">
+                        <span class="icon">🏆</span>
+                        <span>#1 on TripAdvisor</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Booking Widget -->
+            <div class="booking-widget" id="booking">
+                <div class="widget-header">
+                    <div class="widget-badge">Book Your Adventure</div>
+                    <h2 class="widget-title">Choose Your Time</h2>
+                    <p class="widget-subtitle">All tours are 3.5 hours with everything included</p>
+                </div>
+                
+                <div class="time-slots">
+                    <div class="time-slot">
+                        <div class="slot-header">
+                            <div class="slot-time">🌅 Morning Tour</div>
+                            <div class="slot-price">€480</div>
                         </div>
-                        
-                        <div class="boat-specs">
-                            <div class="spec">
-                                <span class="spec-icon">👥</span>
-                                <span>Up to <strong>7 passengers</strong></span>
-                            </div>
-                            <div class="spec">
-                                <span class="spec-icon">📏</span>
-                                <span>Length: <strong>8.50m</strong></span>
-                            </div>
-                            <div class="spec">
-                                <span class="spec-icon">⏱️</span>
-                                <span>Duration: <strong>3.5 hours</strong></span>
-                            </div>
-                            <div class="spec">
-                                <span class="spec-icon">🕙</span>
-                                <span>Times: <strong>10:00, 14:00, 18:00</strong></span>
-                            </div>
+                        <div class="slot-details">10:00 - 13:30 | Perfect for families | Calm waters</div>
+                    </div>
+                    
+                    <div class="time-slot popular selected">
+                        <div class="slot-header">
+                            <div class="slot-time">☀️ Afternoon Tour</div>
+                            <div class="slot-price">€580</div>
                         </div>
-                        
-                        <div class="boat-price-section">
-                            <div class="price-header">
-                                <div class="price-info">
-                                    <div class="price-label">All-Inclusive Price</div>
-                                    <div class="price">€822</div>
-                                    <div class="price-details">per day (up to 7 guests)</div>
-                                </div>
-                                <div class="urgency-badge">Limited Dates</div>
-                            </div>
-                            <div class="boat-buttons">
-                                <a href="#" class="btn-small btn-details">Details</a>
-                                <a href="https://wa.me/34692688348?text=Hi! I'd like to book the Monterey 268 for San Antonio tours. Please send me availability and confirm the €822 all-inclusive price." class="btn-small btn-book">Book Now</a>
-                            </div>
+                        <div class="slot-details">14:00 - 17:30 | Best weather | Great for swimming</div>
+                    </div>
+                    
+                    <div class="time-slot">
+                        <div class="slot-header">
+                            <div class="slot-time">🌅 Sunset Tour</div>
+                            <div class="slot-price">€590</div>
+                        </div>
+                        <div class="slot-details">18:00 - 21:30 | Romantic vibes | Magic hour photos</div>
+                    </div>
+                </div>
+                
+                <button class="book-now-btn" onclick="bookTour()">
+                    BOOK NOW - INSTANT CONFIRMATION
+                </button>
+                
+                <div class="guarantee">
+                    <span class="icon">🛡️</span>
+                    100% Money-Back Guarantee | Free Cancellation
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Social Proof -->
+    <section class="social-proof">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Trusted by 500+ Happy Customers</h2>
+                <p class="section-subtitle">Join thousands who chose us for their perfect Ibiza boat experience</p>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Tours Completed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">4.9</div>
+                    <div class="stat-label">Star Rating</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Return Rate</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Support</div>
+                </div>
+            </div>
+            
+            <div class="testimonials">
+                <div class="testimonial">
+                    <p class="testimonial-text">Absolutely incredible experience! The captain was amazing, Es Vedra was breathtaking, and the secret coves were paradise. Worth every euro!</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">M</div>
+                        <div class="author-info">
+                            <h4>Maria & James</h4>
+                            <div class="rating">⭐⭐⭐⭐⭐</div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Boat 3: DeAntonio 34 -->
-                <div class="boat-card">
-                    <div class="boat-image-container">
-                        <img src="assets/img/boats/D34.jpg" alt="DeAntonio 34" class="boat-image">
-                        <div class="boat-badge">Premium</div>
-                        <div class="boat-rating">
-                            <span class="star">★</span>
-                            <span>5.0</span>
-                        </div>
-                    </div>
-                    <div class="boat-content">
-                        <h3 class="boat-name">DeAntonio 34</h3>
-                        <p class="boat-location">Port - San Antonio | Luxury Experience</p>
-                        
-                        <div class="boat-highlights">
-                            <div class="highlight-title">All Included</div>
-                            <div class="highlight-list">
-                                <span class="highlight-item">Fuel</span>
-                                <span class="highlight-item">Premium Drinks</span>
-                                <span class="highlight-item">Snorkeling Gear</span>
-                                <span class="highlight-item">Towels</span>
-                                <span class="highlight-item">Professional Captain</span>
-                                <span class="highlight-item">Water Toys</span>
-                            </div>
-                        </div>
-                        
-                        <div class="boat-specs">
-                            <div class="spec">
-                                <span class="spec-icon">👥</span>
-                                <span>Up to <strong>11 passengers</strong></span>
-                            </div>
-                            <div class="spec">
-                                <span class="spec-icon">📏</span>
-                                <span>Length: <strong>10m</strong></span>
-                            </div>
-                            <div class="spec">
-                                <span class="spec-icon">⏱️</span>
-                                <span>Duration: <strong>3.5 hours</strong></span>
-                            </div>
-                            <div class="spec">
-                                <span class="spec-icon">🕙</span>
-                                <span>Times: <strong>10:00, 14:00, 18:00</strong></span>
-                            </div>
-                        </div>
-                        
-                        <div class="boat-price-section">
-                            <div class="price-header">
-                                <div class="price-info">
-                                    <div class="price-label">All-Inclusive Luxury</div>
-                                    <div class="price">€1,425</div>
-                                    <div class="price-details">per day (up to 11 guests)</div>
-                                </div>
-                                <div class="urgency-badge">VIP Experience</div>
-                            </div>
-                            <div class="boat-buttons">
-                                <a href="#" class="btn-small btn-details">Details</a>
-                                <a href="https://wa.me/34692688348?text=Hi! I'd like to book the DeAntonio 34 premium boat for San Antonio tours. Please send me availability and confirm the €1,425 all-inclusive price." class="btn-small btn-book">Book Now</a>
-                            </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">Professional crew, stunning locations, and all-inclusive service. The snorkeling was amazing and the drinks were perfect. Highly recommend!</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">D</div>
+                        <div class="author-info">
+                            <h4>David & Lisa</h4>
+                            <div class="rating">⭐⭐⭐⭐⭐</div>
                         </div>
                     </div>
                 </div>
@@ -943,23 +933,223 @@
         </div>
     </section>
     
-    <!-- Contact Section -->
-    <section class="contact-section">
-        <div class="contact-title">Ready to Book Your San Antonio Adventure?</div>
-        <p class="contact-text">
-            Join hundreds of satisfied customers who chose Just Enjoy Ibiza for their perfect boat tour experience
-        </p>
-        <div class="contact-buttons">
-            <a href="https://wa.me/34692688348?text=Hi! I'd like to book a San Antonio boat tour. Please send me availability and pricing." class="btn btn-white">Book via WhatsApp</a>
-            <a href="assets/img/tours/BOAT_TOURS_SAN_ANTONIO.pdf" target="_blank" class="btn btn-outline">Download Brochure</a>
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title2">Why Choose Our Tours?</h2>
+                <p class="section-subtitle">Premium experience with everything included</p>
+            </div>
+            
+            <div class="features-grid">
+                
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🏖️</div>
+                    <h3>Secret Coves</h3>
+                    <p>Discover hidden beaches only accessible by boat. Swim in crystal-clear waters away from the crowds.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🥽</div>
+                    <h3>All Equipment Included</h3>
+                    <p>Snorkeling gear, towels, drinks, and fuel all included. Just bring yourself and enjoy the experience.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">👨‍✈️</div>
+                    <h3>Expert Captains</h3>
+                    <p>Professional, licensed captains who know the best spots and ensure your safety throughout the journey.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Boats -->
+    <section class="boats">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Choose Your Perfect Boat</h2>
+                <p class="section-subtitle">Premium fleet with options for every group size</p>
+            </div>
+            
+            <div class="boats-grid">
+                <!-- Boat 1 -->
+                <div class="boat-card">
+                    <div class="boat-image" style="background-image: url('/assets/img/tours/DJI_0114.jpg')">
+                        <div class="boat-badge">Most Popular</div>
+                    </div>
+                    <div class="boat-content">
+                        <h3 class="boat-title">QuickSilver 675</h3>
+                        <p>Perfect for families and small groups</p>
+                        
+                        <div class="boat-specs">
+                            <div class="spec">
+                                <span class="spec-icon">👥</span>
+                                <span>Up to 7 guests</span>
+                            </div>
+                            <div class="spec">
+                                <span class="spec-icon">📏</span>
+                                <span>6.5m length</span>
+                            </div>
+                            <div class="spec">
+                                <span class="spec-icon">⏱️</span>
+                                <span>3.5 hours</span>
+                            </div>
+                            <div class="spec">
+                                <span class="spec-icon">🎯</span>
+                                <span>All destinations</span>
+                            </div>
+                        </div>
+                        
+                        <div class="boat-price">
+                            <div class="price-info">
+                                <h3>€605</h3>
+                                <p>All-inclusive for up to 7 guests</p>
+                            </div>
+                            <div class="urgency">Limited spots</div>
+                        </div>
+                        
+                        <div class="boat-buttons">
+                            <a href="#" class="btn-outline">Details</a>
+                            <a href="https://wa.me/34692688348?text=Hi! I want to book the Key Largo 27 for €822. Please confirm availability." class="btn-book">Book Key Largo</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Boat 2 -->
+                <div class="boat-card">
+                    <div class="boat-image" style="background-image: url('assets/img/boats/sea-ray-monterey-278-ss-for-rent-ibiza-without-captain.jpg')">
+                        <div class="boat-badge">On Demand</div>
+                    </div>
+                    <div class="boat-content">
+                        <h3 class="boat-title">Sea Ray 230</h3>
+                        <p>Comfort and style for medium groups</p>
+                        
+                        <div class="boat-specs">
+                            <div class="spec">
+                                <span class="spec-icon">👥</span>
+                                <span>Up to 7 guests</span>
+                            </div>
+                            <div class="spec">
+                                <span class="spec-icon">📏</span>
+                                <span>7.05m length</span>
+                            </div>
+                            <div class="spec">
+                                <span class="spec-icon">⏱️</span>
+                                <span>3.5 hours</span>
+                            </div>
+                            <div class="spec">
+                                <span class="spec-icon">🎯</span>
+                                <span>All destinations</span>
+                            </div>
+                        </div>
+                        
+                        <div class="boat-price">
+                            <div class="price-info">
+                                <h3>€580</h3>
+                                <p>All-inclusive for up to 7 guests</p>
+                            </div>
+                            <div class="urgency">Book today</div>
+                        </div>
+                        
+                        <div class="boat-buttons">
+                            <a href="#" class="btn-outline">Details</a>
+                            <a href="https://wa.me/34692688348?text=Hi! I want to book the Monterey 268 for €950. Please confirm availability." class="btn-book">Book Monterey</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Boat 3 -->
+                <div class="boat-card">
+                    <div class="boat-image" style="background-image: url('assets/img/tours/DeAntonio36.jpg')">
+                        <div class="boat-badge">Premium VIP</div>
+                    </div>
+                    <div class="boat-content">
+                        <h3 class="boat-title">DeAntonio 34</h3>
+                        <p>Luxury experience for larger groups</p>
+                        
+                        <div class="boat-specs">
+                            <div class="spec">
+                                <span class="spec-icon">👥</span>
+                                <span>Up to 11 guests</span>
+                            </div>
+                            <div class="spec">
+                                <span class="spec-icon">📏</span>
+                                <span>10m length</span>
+                            </div>
+                            <div class="spec">
+                                <span class="spec-icon">⏱️</span>
+                                <span>3.5 hours</span>
+                            </div>
+                            <div class="spec">
+                                <span class="spec-icon">🎯</span>
+                                <span>VIP treatment</span>
+                            </div>
+                        </div>
+                        
+                        <div class="boat-price">
+                            <div class="price-info">
+                                <h3>€1,425</h3>
+                                <p>Luxury all-inclusive for up to 11 guests</p>
+                            </div>
+                            <div class="urgency">VIP experience</div>
+                        </div>
+                        
+                        <div class="boat-buttons">
+                            <a href="#" class="btn-outline">Details</a>
+                            <a href="https://wa.me/34692688348?text=Hi! I want to book the DeAntonio 34 VIP for €1,425. Please confirm availability." class="btn-book">Book VIP</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2 class="cta-title">Ready for Your Dream Boat Tour?</h2>
+            <p class="cta-subtitle">Book now and create unforgettable memories in Ibiza</p>
+            
+            <div class="cta-buttons">
+                <a href="https://wa.me/34692688348?text=Hi! I want to book a San Antonio boat tour. Please send me availability and confirm pricing." class="btn-white">Book via WhatsApp</a>
+                <a href="tel:+34692688348" class="btn-secondary">Call Now: +34 692 688 348</a>
+            </div>
+            
+            <p class="guarantee-text">
+                🛡️ 100% Money-Back Guarantee | ✅ Free Cancellation | ⭐ 4.9/5 Star Rating
+            </p>
         </div>
     </section>
     
     <!-- WhatsApp Float -->
-    <a href="https://wa.me/34692688348?text=Hi! I'm interested in San Antonio boat tours. Please send me more information." class="whatsapp-float">💬</a>
+    <a href="https://wa.me/34692688348?text=Hi! I'm interested in San Antonio boat tours. Please send me more information and availability." class="whatsapp-float">
+        💬
+    </a>
     
     <!-- Scripts -->
     <script>
+        // Time slot selection
+        document.querySelectorAll('.time-slot').forEach(slot => {
+            slot.addEventListener('click', function() {
+                document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('selected'));
+                this.classList.add('selected');
+            });
+        });
+        
+        // Book tour function
+        function bookTour() {
+            const selectedSlot = document.querySelector('.time-slot.selected');
+            const tourTime = selectedSlot.querySelector('.slot-time').textContent;
+            const price = selectedSlot.querySelector('.slot-price').textContent;
+            
+            const message = `Hi! I want to book the ${tourTime} for ${price}. Please confirm availability and send booking details.`;
+            const whatsappUrl = `https://wa.me/34692688348?text=${encodeURIComponent(message)}`;
+            
+            window.open(whatsappUrl, '_blank');
+        }
+        
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -989,97 +1179,27 @@
             });
         }, observerOptions);
         
-        // Animate elements on scroll
-        document.querySelectorAll('.boat-card, .itinerary-item').forEach((element, index) => {
+        // Animate elements
+        document.querySelectorAll('.boat-card, .feature-card, .testimonial, .stat-card').forEach(element => {
             element.style.opacity = '0';
             element.style.transform = 'translateY(30px)';
-            element.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             observer.observe(element);
         });
         
-        // Tour option click handlers
-        document.querySelectorAll('.tour-option').forEach(option => {
-            option.addEventListener('click', function() {
-                document.getElementById('boats').scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            });
-        });
+        // Add urgency to booking
+        let urgencyTimer = 15; // minutes
+        const urgencyElement = document.querySelector('.urgent-banner');
         
-        // Hero content animation on load
-        window.addEventListener('load', () => {
-            const heroContent = document.querySelector('.hero-content');
-            heroContent.style.opacity = '0';
-            heroContent.style.transform = 'translateY(50px)';
-            heroContent.style.transition = 'opacity 1s ease, transform 1s ease';
-            
-            setTimeout(() => {
-                heroContent.style.opacity = '1';
-                heroContent.style.transform = 'translateY(0)';
-            }, 300);
-        });
+        setInterval(() => {
+            urgencyTimer--;
+            if (urgencyTimer > 0) {
+                urgencyElement.innerHTML = `🔥 LIMITED TIME: 20% OFF - Only ${urgencyTimer} minutes left! Book Now!`;
+            } else {
+                urgencyElement.innerHTML = '🔥 LIMITED TIME: 20% OFF All Tours This Week Only! Book Now Before Spots Fill Up!';
+                urgencyTimer = 15; // Reset timer
+            }
+        }, 60000); // Update every minute
     </script>
 </body>
-</html> Gear</span>
-                                <span class="highlight-item">Towels</span>
-                                <span class="highlight-item">Professional Captain</span>
-                            </div>
-                        </div>
-                        
-                        <div class="boat-specs">
-                            <div class="spec">
-                                <span class="spec-icon">👥</span>
-                                <span>Up to <strong>7 passengers</strong></span>
-                            </div>
-                            <div class="spec">
-                                <span class="spec-icon">📏</span>
-                                <span>Length: <strong>8.05m</strong></span>
-                            </div>
-                            <div class="spec">
-                                <span class="spec-icon">⏱️</span>
-                                <span>Duration: <strong>3.5 hours</strong></span>
-                            </div>
-                            <div class="spec">
-                                <span class="spec-icon">🕙</span>
-                                <span>Times: <strong>10:00, 14:00, 18:00</strong></span>
-                            </div>
-                        </div>
-                        
-                        <div class="boat-price-section">
-                            <div class="price-header">
-                                <div class="price-info">
-                                    <div class="price-label">All-Inclusive Price</div>
-                                    <div class="price">€822</div>
-                                    <div class="price-details">per day (up to 7 guests)</div>
-                                </div>
-                                <div class="urgency-badge">Limited Dates</div>
-                            </div>
-                            <div class="boat-buttons">
-                                <a href="#" class="btn-small btn-details">Details</a>
-                                <a href="https://wa.me/34692688348?text=Hi! I'd like to book the Key Largo 27 for San Antonio tours. Please send me availability and confirm the €822 all-inclusive price." class="btn-small btn-book">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Boat 2: Monterey 268 -->
-                <div class="boat-card">
-                    <div class="boat-image-container">
-                        <img src="assets/img/boats/sea-ray-monterey-278-ss-for-rent-ibiza-without-captain.jpg" alt="Monterey 268" class="boat-image">
-                        <div class="boat-badge">Family Choice</div>
-                        <div class="boat-rating">
-                            <span class="star">★</span>
-                            <span>4.8</span>
-                        </div>
-                    </div>
-                    <div class="boat-content">
-                        <h3 class="boat-name">Monterey 268</h3>
-                        <p class="boat-location">Port - San Antonio | Comfort & Style Combined</p>
-                        
-                        <div class="boat-highlights">
-                            <div class="highlight-title">All Included</div>
-                            <div class="highlight-list">
-                                <span class="highlight-item">Fuel</span>
-                                <span class="highlight-item">Courtesy Drinks</span>
-                                <span class="highlight-item">Snorkeling
+</html>
