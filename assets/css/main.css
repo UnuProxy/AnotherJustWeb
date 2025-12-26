@@ -3032,6 +3032,9 @@ a.btn-book {
     margin-bottom: 30px;
   }
 }
+#nautiq-link {
+    display: none;
+}
 
 @media (max-width: 576px) {
   .featured-title {
